@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+
+  {% block title %}
+    Home {{ block.super }}
+  {% endblock%}
+
+{% block content %}
+ {% load static %}
+
+      <!--Section: Jumbotron-->
+      <section class="card wow fadeIn" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+
+        <!-- Content -->
+        <div class="card-body text-white text-center py-5 px-5 my-5">
+          <h6 class="white-text"><i class="fas fa-book"></i><strong> DBS</strong></h6>
+
+          <h1 class="mb-4">
+            <strong>DJANGO BOOK STORE</strong>
+          </h1>
+          <p>
+            <strong>Best & free resource for developers</strong>
+          </p>
+          <p class="mb-4">
+            <strong>The most comprehensive resorces for the django developers. Video and written
+              versions available. Create your own, stunning mobile and web apps.</strong>
+          </p>
+          <a class="btn btn-outline-white btn-md" href="https://github.com/django"><i class="fas fa-clone left"></i> View project</a>
+
+        </div>
+        <!-- Content -->
+      </section>
+      <!--Section: Jumbotron-->
+
+      <hr class="my-5">
+
+      <!--Section: Cards-->
+      <section class="text-center">
+
+        <!--Grid row-->
+         
+        <div class="row mb-4 wow fadeIn">
+
+
+          <!--Grid column-->
+ 
+          <!--Grid column-->
+        </div>
+       
+        <!--Grid row-->
+
+        <!--Pagination-->
+       {% include 'pagination.html'%}
+        <!--Pagination-->
+
+      </section>
+      <!--Section: Cards-->
+{% endblock %}

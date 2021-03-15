@@ -1,0 +1,66 @@
+{% extends "base.html" %} 
+
+  {% block title %}
+    Home {{ block.super }}
+  {% endblock%}
+
+{% block content %}
+ {% load static %}
+
+            <!--Section: Jumbotron-->
+          
+             <!--Section: Jumbotron-->
+
+      <hr class="my-2">
+
+      <!--Section: Cards-->
+      <section class="text-center">
+
+        <!--Grid row-->
+         
+        <div class="row mb-2 wow fadeIn">
+
+          <!--Grid column-->
+          {% for book in book_list %}
+          <div class="col-lg-4 col-md-6 mb-3">
+
+            <!--Card-->
+            <div class="card">
+              <!--Card image-->
+              <div class="view overlay">
+                <img src="{{book.cover.url}}" width="534" height="279" class="card-img-top" alt="">
+                <a   href="{{book.get_absolute_url}}">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <div class="card-body ">
+                <!--Title-->
+                <a   href="{{book.get_absolute_url}}">
+                  <h4 class="card-title light-green-text"><strong>{{book.title}}</strong></h4>
+                </a>
+                <li class="list-inline-item pr-2 green-text"><i class="fas fa-download"></i></i>
+                            <a href="{{book.upload_book.url}}" download="{{book.upload_book.url}}">
+                               Download
+                            </a>&nbsp;
+                          </li>
+              </div>
+            </div>
+            <!--/.Card-->
+             <!-- Card footer -->
+              
+
+          </div>
+           {% endfor %}
+          <!--Grid column-->
+        </div>
+       
+     
+
+        <!--Pagination-->
+       {% include 'pagination.html'%}
+        <!--Pagination-->
+
+      </section>
+      <!--Section: Cards-->
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %} 
+
+  {% block title %}
+    Detail {{ block.super }}
+  {% endblock%}
+
+{% block content %}
+ {% load static %}
+
+      <!--Section: Cards-->
+      <section class="pt-5">
+
+        <!--Grid row-->
+      
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1-half">
+              <div class="view overlay">
+                  <a  href="{{book.get_absolute_url}}">
+                  <img src="{{book.cover.url}}" width="534" height="279" class="card-img-top" alt="">
+                  </a>
+                
+              </div>
+            </div>
+                         <!-- Card footer -->
+                         <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+                          <ul class="list-unstyled list-inline font-small">
+                            <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>{{ book.uploaded_on.date }}</li>
+
+                          </ul>
+                        </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>{{book.title}}</strong>
+            </h3>
+            <p class="grey-text">{{book.content|safe}}</p>
+            <p>
+            </p>
+            <a href="{{book.upload_book.url}}" download="{{book.upload_book.url}}">Downlaod
+              <i class="fas fa-download ml-2"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+       
+        <!--Grid row-->
+
+        <hr class="mb-5">
+
+        <!--Grid row-->
+
+
+        <!--Pagination-->
+       {% include 'pagination.html'%}
+        <!--Pagination-->
+
+      </section>
+      <!--Section: Cards-->
+
+{% endblock %}

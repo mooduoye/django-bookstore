@@ -1,0 +1,25 @@
+
+            <!--Card-->
+            
+            <div class="card mb-4">
+
+              <div class="card-header font-weight-bold">
+                <span class="pull-right">
+                  <a href="">
+                    Tags:
+                  </a>
+                </span>
+              </div>
+
+              <!--Card content-->
+              {% for tag in post.tags.all %}
+              <div class="tagcloud">
+              	<ul>
+   					<li><a href="{% url 'posts_tag' tag.slug %}" class="tag-cloud-link">{{tag.name}}</a></li>
+   				</ul>
+              </div>
+               {% endfor %}
+            </div
+            <!--/.Card-->
+
+
